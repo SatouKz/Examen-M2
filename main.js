@@ -13,7 +13,7 @@ signInButton.addEventListener("click", () => {
 const signUpxButton = document.getElementById("signUpx");
 const signInxButton = document.getElementById("signInx");
 
-function capturar() {
+signUpxButton.addEventListener("click", function capturar() {
   function usuario(name, email, password) {
     this.name = name;
     this.email = email;
@@ -25,4 +25,17 @@ function capturar() {
   // console.log(nameCapture + " " + emailCapture + " " + passCapture);
   const nuevoUsuario = new usuario(nameCapture, emailCapture, passCapture);
   console.log(nuevoUsuario);
-}
+  console.log(JSON.stringify(nuevoUsuario));
+
+fetch("https://tiendavirtualmern.herokuapp.com/api",{
+  
+})
+  fetch("https://tiendavirtualmern.herokuapp.com/api/users", {
+    method: "POST",
+    body: JSON.stringify(nuevoUsuario),
+    headers: { "Content-Type": "application/json" },
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+})
+.catch(err => console.error(err))
