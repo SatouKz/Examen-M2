@@ -46,9 +46,9 @@ signInxButton.addEventListener("click", function ssLogin() {
     this.email = email;
     this.password = password;
   }
-  let emailLogin = document.getElementById("email").value;
-  let passLogin = document.getElementById("password").value;
-  let userLogin = new user(emailLogin, passLogin);
+  let emailLogin = document.getElementById("emailLogin").value;
+  let passLogin = document.getElementById("passwordLogin").value;
+  const userLogin = new user(emailLogin, passLogin);
   fetch("https://tiendavirtualmern.herokuapp.com/api/users/login", {
     method: "POST",
     body: JSON.stringify(userLogin),
