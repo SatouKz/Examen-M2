@@ -11,8 +11,7 @@ signInButton.addEventListener("click", () => {
 
 const apiTienda = document.querySelector(".container");
 const url = "https://tiendavirtualmern.herokuapp.com/api";
-fetch(url)
-.then((response) => console.log(response));
+fetch(url).then((response) => console.log(response));
 
 const signUpxButton = document.getElementById("signUpx");
 const signInxButton = document.getElementById("signInx");
@@ -38,7 +37,7 @@ signUpxButton.addEventListener("click", function ssRegister() {
   })
     .then((response) => response.json())
     .then((data) => console.log(data));
-    alert('Usuario creado exitosamente')
+  alert("Usuario creado exitosamente");
 });
 //LOGIN
 signInxButton.addEventListener("click", function ssLogin() {
@@ -56,4 +55,6 @@ signInxButton.addEventListener("click", function ssLogin() {
   })
     .then((response) => response.json())
     .then((data) => console.log(data));
+    alert("Inicio de sesion exitoso")
 });
+// Code by: SatouKz
